@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+//NOTE: Thes defines the following services inside a module - Intro::EventReceiver
+package Intro;
+
+/*[EventReceiver] is a service, it has the [ReceiveEvent] operation which takes in [EventObj]*/
+service EventReceiver {
+    rpc ReceiveEvent(EventObj) returns (google.protobuf.Empty){}
+
+    // Example second Operation. Illustrative purposes only.
+    /* rpc DanceEvent(Event) returns (Cat){} */
+}
+
+message EventObj {
+  string stakato_version_key = 1;
+  string key = 2;
+  string event_key = 3;
+  string event_profile_key = 4;
+  string profile_id = 5; 
+  string event_type_key = 6;
+  string event_data = 7;
+}
